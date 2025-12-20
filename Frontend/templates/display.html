@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <th> Employee_Name </th>
+        <th> Department </th>
+        <th> Salary </th>
+        <th> DOJ </th>
+        <th> Mobile_Number </th>
+        <th> City </th>
+        {% for employee in emp %}
+        <tr>
+         <td> {{ employee.emp_name }}</td>
+            <td> {{ employee.department }}</td>
+            <td> {{ employee.salary }}</td>
+            <td> {{ employee.doj }}</td>
+            <td> {{ employee.mobile_number }}</td>
+            <td> {{ employee.city }}</td>
+            <td> <button><a href="{% url 'update_emp' employee.id %}"> UPDATE</a></button></td>
+            <td> <button> <a href="{% url 'delete_emp' employee.id %}">DELETE </a></button></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
