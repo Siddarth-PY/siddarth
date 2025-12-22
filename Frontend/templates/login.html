@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method ="POST">
+     {% csrf_token %}   
+  <div class="form-group">
+    <label for="exampleInputEmail1">USER_NAME</label>
+     <input type="text" name="User" class="form-control">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="PASSWORD" class="form-control" id="exampleInputPassword1">
+  </div>
+   <br> <button type="submit" class="btn btn-primary"> Submit</button>
+   <br>
+   <br>
+   
+      <button type="submit"><a href="/signup/" class="btn btn-primary">
+    SIGNUP</a> </button> 
+
+</form>
+</body>
+</html>
+{% endblock %}

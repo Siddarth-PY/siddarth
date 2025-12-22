@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="" method="POST">
+      {% csrf_token %}   
+<div class="form-group">
+    <label for="exampleInputEmail1">User_Name</label>
+    <input type="text" name="User" class="form-control">
+
+    <label for="exampleInputEmail1">Password</label>
+    <input type="password" name="PASSWORD" class="form-control">
+
+    <label for="exampleInputEmail1">First_name</label>
+    <input type="text" name="FIRSTNAME" class="form-control">
+
+    <label for="exampleInputEmail1">Last_name</label>
+    <input type="text" name="LASTNAME" class="form-control">
+
+    <label for="exampleInputEmail1">Email</label>
+    <input type="text" name="EMAIL" class="form-control">
+
+    <label for="exampleInputEmail1">DOB</label>
+    <input type="date" name="DOB" class="form-control">
+
+    <label for="exampleInputEmail1">Mobile</label>
+    <input type="text" name="MOBILE" class="form-control">
+
+ <button type="submit"> <a href="/login/" class="btn btn-primary">
+    Submit </a> </button></form>
+
+     
+   
+</form>
+</body>
+</html>
+{% endblock %}
