@@ -1,0 +1,17 @@
+/* Center wrapper */
+.login-wrapper {
+    min-height: 100vh;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.login-card {
+    width: 380px;
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}

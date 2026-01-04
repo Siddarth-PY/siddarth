@@ -3,6 +3,7 @@ from .models import*
 from .views import*
 
 urlpatterns=[
-    path("signup/",signup_page),
-    path("login/",login_page)
+    path('signup/',signup_page),
+    path('',login_page),
+    path('logout/',logout_page),
 ]

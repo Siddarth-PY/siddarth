@@ -1,8 +1,10 @@
 from django.shortcuts import render,redirect
 from .models import*
 from django.contrib.auth import authenticate,login,logout
-# Create your views here.
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
+# Create your views here.
 def login_page(request):
     context={
         "error":"invalid"
@@ -13,16 +15,18 @@ def login_page(request):
         
         if emp is not None:
           login(request,emp)
-          return redirect("/display/")
-        
+          if emp.username == "siddu":
+           return redirect("/form/")
+          else:
+             return redirect("/display/")
         else:
-            context={"erorr":"Invalid content"}
+            context={"error":"Invalid content"}
             return render(request,"login.html",context)
     return render(request,"login.html",context)
 
 
 def signup_page(request):
- context={"error":"Invalid conttent"}
+ context={"error":"Invalid content"}
  if request.method =="POST":
     emp=User(username=request.POST["User"],
          first_name=request.POST["FIRSTNAME"],
@@ -35,6 +39,9 @@ def signup_page(request):
     emp.save()
  else:
     pass
-    
-    
  return render(request,"signup.html",context)
+
+
+def logout_page(request):
+   logout(request)
+   return redirect("/")
